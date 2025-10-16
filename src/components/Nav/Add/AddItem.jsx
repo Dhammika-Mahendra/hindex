@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function AddItem({name}) {
+export default function AddItem({name,id,addFile}) {
 return (
     <div
         style={{
@@ -21,6 +21,7 @@ return (
             fill="currentColor"
             viewBox="0 0 24 24"
             style={{ cursor: 'pointer' }}
+            onClick={() => addFile(id)}
         >
             <path
                 fillRule="evenodd"

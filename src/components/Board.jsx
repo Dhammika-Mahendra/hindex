@@ -23,7 +23,7 @@ export default function Board() {
         setLineageData2(shilla)
         setLineageData3(goguryeo)
         setLineageData4(baekje)
-        setFileList(['tang', 'shilla', 'goguryeo', 'baekje'])
+        setFileList([{id:1,name:'tang'},{id:2,name:'shilla'},{id:3,name:'goguryeo'},{id:4,name:'baekje'}])
         setOffsets(calacOffsets(tang, shilla, goguryeo, baekje))
     }, [])
 
