@@ -9,3 +9,13 @@ export function calacOffsets(...jsonArrays) {
   const minFrom = validFroms.length > 0 ? Math.min(...validFroms) : 0;
   return fromValues.map(v => (typeof v === 'number' ? v - minFrom : undefined));
 }
+
+//generate random color
+export function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
