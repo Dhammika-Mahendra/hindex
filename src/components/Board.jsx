@@ -7,7 +7,7 @@ import baekjeData from '../assets/data/Baekje.json'
 
 import { calacOffsets } from '../util/functions'
 import { useAppContext } from '../context/AppContext'
-import Nav from './Nav'
+import Nav from './Nav/Nav'
 
 export default function Board() {
     const {scale} = useAppContext()
@@ -35,11 +35,13 @@ export default function Board() {
                 }}>
             <Nav />
             <div style={{
+                backgroundColor: '#f0f0f0',
                 height: '100vh', 
-                width: '100vw', 
+                width: '100%', 
                 overflowY: 'scroll',
                 flexDirection: 'row', 
-                display: 'flex'
+                display: 'flex',
+                justifyContent: 'center',
                 }}>
                 <Lineage data={lineageData1} offset={offSets[0]*scale}/>
                 <Lineage data={lineageData2} offset={offSets[1]*scale}/>
