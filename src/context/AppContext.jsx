@@ -15,10 +15,16 @@ export const useAppContext = () => {
 // Context provider component
 export const AppProvider = ({ children }) => {
   const [scale, setScale] = useState(8)
+  const [fileList, setFileList] = useState([])
+  const [addedFiles, setAddedFiles] = useState([])
 
   const value = {
     scale,
-    setScale
+    setScale,
+    fileList,
+    setFileList,
+    addedFiles,
+    setAddedFiles
   }
 
   return (

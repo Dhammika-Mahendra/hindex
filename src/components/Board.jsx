@@ -1,16 +1,16 @@
 import React from 'react'
 import Lineage from './lineage'
-import tangData from '../assets/data/Tang.json'
-import shillaData from '../assets/data/Shilla.json'
-import goguryeoData from '../assets/data/Goguryeo.json'
-import baekjeData from '../assets/data/Baekje.json'
+import tang from '../assets/data/Tang.json'
+import shilla from '../assets/data/Shilla.json'
+import goguryeo from '../assets/data/Goguryeo.json'
+import baekje from '../assets/data/Baekje.json'
 
 import { calacOffsets } from '../util/functions'
 import { useAppContext } from '../context/AppContext'
 import Nav from './Nav/Nav'
 
 export default function Board() {
-    const {scale} = useAppContext()
+    const {scale, setFileList} = useAppContext()
 
     const [lineageData1, setLineageData1] = React.useState(null)
     const [lineageData2, setLineageData2] = React.useState(null)
@@ -19,11 +19,12 @@ export default function Board() {
     const [offSets,setOffsets] = React.useState([]) 
 
     React.useEffect(() => {
-        setLineageData1(tangData)
-        setLineageData2(shillaData)
-        setLineageData3(goguryeoData)
-        setLineageData4(baekjeData)
-        setOffsets(calacOffsets(tangData,shillaData,goguryeoData,baekjeData))
+        setLineageData1(tang)
+        setLineageData2(shilla)
+        setLineageData3(goguryeo)
+        setLineageData4(baekje)
+        setFileList(['tang', 'shilla', 'goguryeo', 'baekje'])
+        setOffsets(calacOffsets(tang, shilla, goguryeo, baekje))
     }, [])
 
     return (

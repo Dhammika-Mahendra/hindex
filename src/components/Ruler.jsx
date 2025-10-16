@@ -5,13 +5,14 @@ import { getRandomColor } from '../util/functions'
 export default function Ruler({name,chance,from,to}) {
   const { scale } = useAppContext()
   const [height,setHeight]= useState(Math.abs(to-from)*scale)
+  const [color,setColor]= useState(getRandomColor())
 
   React.useEffect(() => {
     setHeight(Math.abs(to-from)*scale)}, 
   [scale])
 
   return (
-    <div style={{backgroundColor : getRandomColor(), paddingLeft:'5px', height: `${height}px`}}>
+    <div style={{backgroundColor : color, paddingLeft:'5px', height: `${height}px`}}>
       {height>15 ? 
       <div style={{display:'flex', flexDirection:'row', alignItems:'end', justifyContent:'space-between'}}>
         <div style={{fontSize: '14px'}}>{name}</div>

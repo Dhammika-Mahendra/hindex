@@ -15,7 +15,7 @@ export default function Slider() {
                 step={1}
                 onChange={(e) => setScale(Number(e.target.value))}
                 style={{ width: '140px', height: '2px' }}
-            />
+            /> 
         </div>
     )
 }
