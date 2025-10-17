@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Lineage from './lineage'
-
 import { useAppContext } from '../context/AppContext'
 import Nav from './Nav/Nav'
+import { calacOffsets } from '../util/functions'    
 
 export default function Board() {
-    const {scale, fileSet, setFileList, lineageData, setLineageData, offSets, setOffsets} = useAppContext()
+    const {scale, lineageData, offSets, setOffsets, addedFiles} = useAppContext()
+
+    useEffect(() => {
+        setOffsets(calacOffsets(addedFiles))
+    }, [addedFiles])
 
     return (
         <div style={{
@@ -24,9 +28,11 @@ export default function Board() {
                 display: 'flex',
                 justifyContent: 'center',
                 }}>
-                 {lineageData && lineageData.map((data, index) => (
-                    <Lineage key={index} data={data} offset={offSets[index]*scale}/>
-                 ))}
+                {lineageData && lineageData
+                    .filter(data => addedFiles.some(file => file.id === data.id))
+                    .map((data, index) => (
+                        <Lineage key={index} data={data.data} offset={offSets[index]*scale}/>
+                    ))}
             </div>
         </div>
     )
