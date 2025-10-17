@@ -1,4 +1,10 @@
-[
+{
+    "id":8,
+    "name":"Qing",
+    "description":"",
+    "type":"lineage",
+    "data":
+    [
     {
         "name": "Hong Taiji",
         "from": 1636,
@@ -66,3 +72,4 @@
         "ch": ""
     }
 ]
+}

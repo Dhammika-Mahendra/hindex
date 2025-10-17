@@ -1,4 +1,10 @@
-[
+{
+    "id":5,
+    "name":"Goryeo",
+    "description":"",
+    "type":"lineage",
+    "data":
+    [
     {
         "name": "Taejo",
         "from": 918,
@@ -210,3 +216,4 @@
         "ch": ""
     }
 ]
+}

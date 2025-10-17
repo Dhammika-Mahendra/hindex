@@ -1,4 +1,10 @@
-[
+{
+    "id":7,
+    "name":"Ming",
+    "description":"",
+    "type":"lineage",
+    "data": 
+    [
     {
         "name": "Hongwu",
         "from": 1368,
@@ -96,3 +102,4 @@
         "ch" : ""
     }
 ]
+}
