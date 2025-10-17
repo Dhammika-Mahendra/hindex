@@ -19,6 +19,7 @@ export const useAppContext = () => {
 export const AppProvider = ({ children }) => {
   const [scale, setScale] = useState(8)
   const [lineageData, setLineageData] = React.useState([tang, shilla, goguryeo, baekje])
+  const [addedFiles, setAddedFiles] = React.useState([])
   const [offSets,setOffsets] = React.useState([]) 
 
   const value = {
@@ -27,7 +28,9 @@ export const AppProvider = ({ children }) => {
     lineageData,
     setLineageData,
     offSets,
-    setOffsets
+    setOffsets,
+    addedFiles,
+    setAddedFiles
   }
 
   return (
