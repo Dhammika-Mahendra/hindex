@@ -1,4 +1,10 @@
-[
+{
+    "id":3,
+    "name":"Goguryeo",
+    "description":"",
+    "type":"lineage",
+    "data":
+    [
     {
         "name": "Chumo",
         "from": -37,
@@ -168,3 +174,4 @@
         "ch": ""
     }
 ]
+}

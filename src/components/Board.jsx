@@ -10,7 +10,7 @@ import { useAppContext } from '../context/AppContext'
 import Nav from './Nav/Nav'
 
 export default function Board() {
-    const {scale, setFileList} = useAppContext()
+    const {scale, fileSet, setFileList} = useAppContext()
 
     const [lineageData1, setLineageData1] = React.useState(null)
     const [lineageData2, setLineageData2] = React.useState(null)
@@ -19,12 +19,12 @@ export default function Board() {
     const [offSets,setOffsets] = React.useState([]) 
 
     React.useEffect(() => {
-        setLineageData1(tang)
-        setLineageData2(shilla)
-        setLineageData3(goguryeo)
-        setLineageData4(baekje)
+        setLineageData1(tang.data)
+        setLineageData2(shilla.data)
+        setLineageData3(goguryeo.data)
+        setLineageData4(baekje.data)
         setFileList([{id:1,name:'tang'},{id:2,name:'shilla'},{id:3,name:'goguryeo'},{id:4,name:'baekje'}])
-        setOffsets(calacOffsets(tang, shilla, goguryeo, baekje))
+        setOffsets(calacOffsets(tang.data, shilla.data, goguryeo.data, baekje.data))
     }, [])
 
     return (

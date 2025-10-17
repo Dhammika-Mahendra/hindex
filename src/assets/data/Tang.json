@@ -1,4 +1,11 @@
-[
+
+{
+    "id":1,
+    "name":"Tang",
+    "description":"",
+    "type":"lineage",
+    "data":
+    [
     {
         "name": "Gaozu",
         "from": 618,
@@ -138,3 +145,4 @@
         "ch": ""
     }
 ]
+}

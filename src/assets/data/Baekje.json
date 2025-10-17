@@ -1,4 +1,10 @@
-[
+{
+    "id":4,
+    "name":"Baekje",
+    "description":"",
+    "type":"lineage",
+    "data":
+    [
     {
         "name": "Onjo",
         "from": -18,
@@ -180,3 +186,4 @@
         "ch": ""
     }
 ]
+}

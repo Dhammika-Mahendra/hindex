@@ -1,4 +1,10 @@
-[
+{
+    "id":2,
+    "name":"Shilla",
+    "description":"",
+    "type":"lineage",
+    "data":
+    [
     {
         "name": "Hyeokgeose",
         "from": -57,
@@ -330,3 +336,4 @@
         "ch": ""
     }
 ]
+}
