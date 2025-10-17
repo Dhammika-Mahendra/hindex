@@ -5,25 +5,19 @@ import shilla from '../assets/data/Shilla.json'
 import goguryeo from '../assets/data/Goguryeo.json'
 import baekje from '../assets/data/Baekje.json'
 
-import { calacOffsets } from '../util/functions'
+import { calacOffsets, extractHeaderProps } from '../util/functions'
 import { useAppContext } from '../context/AppContext'
 import Nav from './Nav/Nav'
 
 export default function Board() {
     const {scale, fileSet, setFileList} = useAppContext()
 
-    const [lineageData1, setLineageData1] = React.useState(null)
-    const [lineageData2, setLineageData2] = React.useState(null)
-    const [lineageData3, setLineageData3] = React.useState(null)
-    const [lineageData4, setLineageData4] = React.useState(null)
+    const [lineageData, setLineageData] = React.useState(null)
     const [offSets,setOffsets] = React.useState([]) 
 
     React.useEffect(() => {
-        setLineageData1(tang.data)
-        setLineageData2(shilla.data)
-        setLineageData3(goguryeo.data)
-        setLineageData4(baekje.data)
-        setFileList([{id:1,name:'tang'},{id:2,name:'shilla'},{id:3,name:'goguryeo'},{id:4,name:'baekje'}])
+        setLineageData([tang.data, shilla.data, goguryeo.data, baekje.data])
+        setFileList(extractHeaderProps([tang, shilla, goguryeo, baekje]))
         setOffsets(calacOffsets(tang.data, shilla.data, goguryeo.data, baekje.data))
     }, [])
 
@@ -44,10 +38,9 @@ export default function Board() {
                 display: 'flex',
                 justifyContent: 'center',
                 }}>
-                <Lineage data={lineageData1} offset={offSets[0]*scale}/>
-                <Lineage data={lineageData2} offset={offSets[1]*scale}/>
-                <Lineage data={lineageData3} offset={offSets[2]*scale}/>
-                <Lineage data={lineageData4} offset={offSets[3]*scale}/>
+                 {lineageData && lineageData.map((data, index) => (
+                    <Lineage key={index} data={data} offset={offSets[index]*scale}/>
+                 ))}
             </div>
         </div>
     )

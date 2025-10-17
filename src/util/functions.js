@@ -10,6 +10,15 @@ export function calacOffsets(...jsonArrays) {
   return fromValues.map(v => (typeof v === 'number' ? v - minFrom : undefined));
 }
 
+//extract header props
+export function extractHeaderProps(jsonArray) {
+  if (!Array.isArray(jsonArray)) return [];
+  return jsonArray.map(obj => ({
+    id: obj.id,
+    name: obj.name
+  }));
+}
+
 //generate random color
 export function getRandomColor() {
   const letters = '0123456789ABCDEF';
