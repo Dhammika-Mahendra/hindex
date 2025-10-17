@@ -4,7 +4,9 @@
  * @returns {Array} Array of offset values in the order of the arguments.
  */
 export function calacOffsets(...jsonArrays) {
-  const fromValues = jsonArrays.map(arr => (Array.isArray(arr.data) && arr.data.length > 0 ? arr.data[0].from : undefined));
+  console.log('Calculating offsets for:', jsonArrays);
+  const fromValues = jsonArrays.map(arr => (Array.isArray(arr) && arr.length > 0 ? arr[0].from : undefined));
+  console.log('From values:', fromValues);
   const validFroms = fromValues.filter(v => typeof v === 'number');
   const minFrom = validFroms.length > 0 ? Math.min(...validFroms) : 0;
   return fromValues.map(v => (typeof v === 'number' ? v - minFrom : undefined));

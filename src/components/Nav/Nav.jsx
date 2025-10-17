@@ -7,7 +7,7 @@ export default function Nav() {
   return (
     <div style={{width: '200px', boxShadow: '2px 0 5px rgba(0,0,0,0.1)', padding: '10px', boxSizing: 'border-box'}}>
         <Add />
-        <Added></Added>
+      
         <Slider />
     </div>
   )

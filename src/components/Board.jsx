@@ -5,11 +5,15 @@ import Nav from './Nav/Nav'
 import { calacOffsets } from '../util/functions'    
 
 export default function Board() {
-    const {scale, lineageData, offSets, setOffsets, addedFiles} = useAppContext()
+    const {scale, lineageData, offSets, setOffsets} = useAppContext()
 
     useEffect(() => {
-        setOffsets(calacOffsets(addedFiles))
-    }, [addedFiles])
+        const activeLineages = lineageData.filter(data => data.active === 1);
+        //filter data property of all active lineages
+        const filteredData = activeLineages.map(data => data.data);
+        //make above a list of json objects
+        setOffsets(calacOffsets(...filteredData));
+    }, [lineageData, scale])
 
     return (
         <div style={{
@@ -28,11 +32,13 @@ export default function Board() {
                 display: 'flex',
                 justifyContent: 'center',
                 }}>
-                {lineageData && lineageData
-                    .filter(data => addedFiles.some(file => file.id === data.id))
-                    .map((data, index) => (
-                        <Lineage key={index} data={data.data} offset={offSets[index]*scale}/>
-                    ))}
+                {
+                    lineageData && lineageData
+                        .filter(data => data.active === 1)
+                        .map((data, index) => (
+                            <Lineage key={index} data={data.data} offset={offSets[index]*scale}/>
+                        ))
+                }
             </div>
         </div>
     )

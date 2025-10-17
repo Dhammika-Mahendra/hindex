@@ -3,17 +3,17 @@ import { useAppContext } from '../../../context/AppContext'
 import AddItem from './AddItem';
 
 export default function Add() {
-  const { fileList, setFileList, setAddedFiles } = useAppContext()
+  const { lineageData, setLineageData } = useAppContext()
   const [search, setSearch] = useState("");
-  const filteredList = fileList.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
+  const filteredList = lineageData.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
 
   const addFile = (id) => {
-    //remove from fileList 
-    const newList = fileList.filter(item => item.id !== id);
-    setFileList(newList);
-    //add to addedFiles
-    const addedFile = fileList.find(item => item.id === id);
-    setAddedFiles(prev => [...prev, addedFile]);
+   //make the corresponding id element in lineageData active :1
+    const addedFile = lineageData.find(item => item.id === id);
+    if (addedFile) {
+      addedFile.active = 1;
+      setLineageData([...lineageData]);
+    }
   }
 
   return (
