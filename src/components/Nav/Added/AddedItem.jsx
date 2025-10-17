@@ -18,15 +18,17 @@ export default function AddedItem({id,name,deleteFile}) {
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
-            fill="currentColor"
+            fill="none"
             viewBox="0 0 24 24"
             style={{ cursor: 'pointer' }}
             onClick={() => deleteFile(id)}
         >
             <path
-                fillRule="evenodd"
-                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4.243a1 1 0 1 0-2 0V11H7.757a1 1 0 1 0 0 2H11v3.243a1 1 0 1 0 2 0V13h3.243a1 1 0 1 0 0-2H13V7.757Z"
-                clipRule="evenodd"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18 17.94 6M18 18 6.06 6"
             />
         </svg>
     </div>

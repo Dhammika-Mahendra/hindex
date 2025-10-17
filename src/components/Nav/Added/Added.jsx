@@ -4,15 +4,12 @@ import AddedItem from './AddedItem'
 
 export default function () {
     
-  const { setFileList, addedFiles, setAddedFiles } = useAppContext()
+  const { addedFiles, setAddedFiles } = useAppContext()
 
   const deleteFile = (id) => {
-    //remove from fileList 
-    const newList = addedFiles.filter(item => item.id !== id);
-    setAddedFiles(newList);
-    //add to addedFiles
-    const addedFile = addedFiles.find(item => item.id === id);
-    setFileList(prev => [...prev, addedFile]);
+    //remove from addedFiles based on id
+    const updatedFiles = addedFiles.filter(item => item.id !== id);
+    setAddedFiles(updatedFiles);
  }
 
   return (
