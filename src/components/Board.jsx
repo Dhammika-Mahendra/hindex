@@ -3,6 +3,7 @@ import Lineage from './lineage'
 import { useAppContext } from '../context/AppContext'
 import Nav from './Nav/Nav'
 import { calacOffsets } from '../util/functions'    
+import Timeline from './Timeline'
 
 export default function Board() {
     const {scale, lineageData, offSets, setOffsets, addedFiles, setAddedFiles} = useAppContext()
@@ -10,7 +11,7 @@ export default function Board() {
     useEffect(() => {
         //extract the data property of all elements from addedFiles
         const filteredData = addedFiles.map(file => file.data);
-        setOffsets(calacOffsets(...filteredData)); 
+        setOffsets(calacOffsets(...filteredData).offset); 
     }, [addedFiles, scale])
 
     return (
@@ -18,9 +19,11 @@ export default function Board() {
                 height: '100vh', 
                 width: '100vw', 
                 flexDirection: 'row', 
-                display: 'flex'
+                display: 'flex',
+                justifyContent: 'flex-start'
                 }}>
             <Nav />
+            <Timeline />
             <div style={{
                 backgroundColor: '#f0f0f0',
                 height: '100vh', 

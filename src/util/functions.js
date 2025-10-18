@@ -4,12 +4,22 @@
  * @returns {Array} Array of offset values in the order of the arguments.
  */
 export function calacOffsets(...jsonArrays) {
-  console.log('Calculating offsets for:', jsonArrays);
+  //min value of 'from' property across all arrays first elements
+  const output={start:'',end:'',offset:[]}
   const fromValues = jsonArrays.map(arr => (Array.isArray(arr) && arr.length > 0 ? arr[0].from : undefined));
-  console.log('From values:', fromValues);
   const validFroms = fromValues.filter(v => typeof v === 'number');
   const minFrom = validFroms.length > 0 ? Math.min(...validFroms) : 0;
-  return fromValues.map(v => (typeof v === 'number' ? v - minFrom : undefined));
+  output.start = minFrom;
+  //max value of 'to' property across all arrays last elements
+  const toValues = jsonArrays.map(arr => (Array.isArray(arr) && arr.length
+  > 0 ? arr[arr.length - 1].to : undefined));
+  const validTos = toValues.filter(v => typeof v === 'number');
+  const maxTo = validTos.length > 0 ? Math.max(...validTos) : 0;
+  output.end = maxTo;
+  output.offset = fromValues.map(v => (typeof v === 'number' ? v - minFrom : undefined));
+  console.log('maxTo:', maxTo);
+  console.log('minFrom:', minFrom);
+  return output;
 }
 
 //extract header props

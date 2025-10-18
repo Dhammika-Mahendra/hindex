@@ -14,12 +14,12 @@ export default function Ruler({name,chance,from,to}) {
   return (
     <div style={{backgroundColor : color, paddingLeft:'5px', height: `${height}px`}}>
       {height>15 ? 
-      <div style={{display:'flex', flexDirection:'row', alignItems:'end', justifyContent:'space-between'}}>
-        <div style={{fontSize: '14px'}}>{name}</div>
-        <div style={{fontSize: '10px'}}>{chance !== "" ? `[${chance} time]` : ""}</div>
+      <div style={{display:'flex', flexDirection:'row', alignItems:'start', justifyContent:'space-between'}}>
+        <p style={{fontSize: '12px'}}>{name}</p>
+        <p style={{fontSize: '10px'}}>{chance !== "" ? `[${chance}]` : ""}</p>
       </div>
        : ''}
-      {height>35 ? <div style={{fontSize: '12px',marginTop:'-5px'}}>
+      {height>35 ? <div style={{fontSize: '10px',marginTop:'-2px'}}>
         {from < 0 ? -1*from : from} {from < 0 && to > 0? "BC" : ""} - {to <0? -1*to : to} {to < 0 ? "BC" : "CE"}</div> : ''}
     </div>
   )
