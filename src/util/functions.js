@@ -3,7 +3,7 @@
  * @param  {...Array} jsonArrays - Variable number of JSON arrays.
  * @returns {Array} Array of offset values in the order of the arguments.
  */
-export function calacOffsets(...jsonArrays) {
+export function calcOffsets(...jsonArrays) {
   //min value of 'from' property across all arrays first elements
   const output={start:'',end:'',offset:[]}
   const fromValues = jsonArrays.map(arr => (Array.isArray(arr) && arr.length > 0 ? arr[0].from : undefined));
@@ -17,8 +17,6 @@ export function calacOffsets(...jsonArrays) {
   const maxTo = validTos.length > 0 ? Math.max(...validTos) : 0;
   output.end = maxTo;
   output.offset = fromValues.map(v => (typeof v === 'number' ? v - minFrom : undefined));
-  console.log('maxTo:', maxTo);
-  console.log('minFrom:', minFrom);
   return output;
 }
 
