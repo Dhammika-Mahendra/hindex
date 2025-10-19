@@ -12,7 +12,7 @@ export default function Timeline({from,to,scale}) {
 
   return (
     <div style={{
-        height:`${height}px`, width: '50px', backgroundColor: 'yellow',
+        height:`${height}px`, width: '50px', backgroundColor: '#f0f0f0',
         display:'flex', flexDirection:'column', alignItems:'flex-start',justifyContent:'space-between'}}>
           
           <div style={{height: `${Math.abs(from-startYear) * scale}px`, width: '100%', display: 'flex',alignItems:'center', flexDirection: 'column', justifyContent: 'flex-end',borderBottom: '1px solid black'}}>

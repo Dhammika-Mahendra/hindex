@@ -20,13 +20,19 @@ export default function Board() {
                 width: '100vw', 
                 flexDirection: 'row', 
                 display: 'flex',
+                alignItems: 'flex-start',
                 justifyContent: 'flex-start'
                 }}>
+                    
             <Nav />
-            <div style={{width: '100%',display: 'flex', flexDirection: 'row', alignItems: 'flex-start', overflowY: 'scroll',backgroundColor: '#f0f0f0'}}>
+
+            <div 
+            style={{height: '100%',width: '100%',display: 'flex', flexDirection: 'row', alignItems: 'flex-start', overflowY: 'scroll',backgroundColor: '#f0f0f0'}}
+            >
                 <Timeline from={offSets.start} to={offSets.end} scale={scale} />
 
                 <div style={{
+                    height: '100%',
                     width: '100%',
                     flexDirection: 'row', 
                     display: 'flex',
