@@ -23,25 +23,25 @@ export default function Board() {
                 justifyContent: 'flex-start'
                 }}>
             <Nav />
-            <div style={{
-                backgroundColor: '#f0f0f0',
-                height: '100vh', 
-                width: '100%', 
-                overflowY: 'scroll',
-                flexDirection: 'row', 
-                display: 'flex',
-                justifyContent: 'center',
-                }}>
+            <div style={{width: '100%',display: 'flex', flexDirection: 'row', alignItems: 'flex-start', overflowY: 'scroll',backgroundColor: '#f0f0f0'}}>
                 <Timeline from={offSets.start} to={offSets.end} scale={scale} />
-                {
-                    addedFiles.map((data, index) => (
-                        <Lineage 
-                            key={data.id} 
-                            data={data.data} 
-                            offset={offSets.offset[index]*scale || 0} 
-                        />
-                    ))
-                }
+
+                <div style={{
+                    width: '100%',
+                    flexDirection: 'row', 
+                    display: 'flex',
+                    justifyContent: 'center',
+                    }}>
+                    {
+                        addedFiles.map((data, index) => (
+                            <Lineage 
+                                key={data.id} 
+                                data={data.data} 
+                                offset={offSets.offset[index]*scale || 0} 
+                            />
+                        ))
+                    }
+                </div>
             </div>
         </div>
     )
