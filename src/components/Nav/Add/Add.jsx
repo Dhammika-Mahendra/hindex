@@ -24,7 +24,20 @@ export default function Add() {
         value={search}
         onChange={e => setSearch(e.target.value)}
       />
-      <ul style={{height: '200px', overflowY: 'auto', paddingLeft :'5px', paddingRight: '5px', marginTop: '10px', border: '1px solid #ccc'}}>
+      
+      <div style={{marginTop:'5px', marginBottom:'2px'}}>
+        <select
+          id="region-select"
+          className="block w-full px-3 py-1 border border-gray-300 rounded-sm transition-colors"
+          style={{ fontSize: '12px' }}
+        >
+          <option value="L1">Dynasty</option>
+          <option value="L2">Kingdom</option>
+          <option value="L3">Event</option>
+        </select>
+      </div>
+
+      <ul style={{height: '200px', overflowY: 'auto', paddingLeft :'5px', paddingRight: '5px', border: '1px solid #ccc'}}>
         {filteredList.map(item => (
           <AddItem key={item.id} id={item.id} name={item.name} addFile={addFile} />
         ))}
