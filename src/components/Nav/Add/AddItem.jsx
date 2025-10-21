@@ -4,11 +4,15 @@ export default function AddItem({name,id,addFile}) {
 return (
     <div
         style={{
+            width: '100%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             padding: '5px 0',
             borderBottom: '1px solid #eee',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
         }}
     >
         <p style={{ fontSize: '12px' }}>{name}</p>

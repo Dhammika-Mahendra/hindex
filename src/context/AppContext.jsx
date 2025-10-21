@@ -9,6 +9,7 @@ import ming from '../assets/data/Ming.json'
 import goryeo from '../assets/data/Goryeo.json'
 import yuan from '../assets/data/Yuan.json'
 import han from '../assets/data/Han.json'
+import domain from '../assets/data/Domain.json'
 
 // Create the context
 const AppContext = createContext()
@@ -26,6 +27,8 @@ export const useAppContext = () => {
 export const AppProvider = ({ children }) => {
   const [scale, setScale] = useState(8)
   const [lineageData, setLineageData] = React.useState([tang, shilla, goguryeo, baekje, joseon, qing, ming, goryeo, yuan, han])
+  const [domainData, setDomainData] = React.useState([...domain])
+  const [eventsData, setEventsData] = React.useState([])
   const [addedFiles, setAddedFiles] = React.useState([])
   const [offSets,setOffsets] = React.useState([]) 
 
@@ -37,7 +40,11 @@ export const AppProvider = ({ children }) => {
     offSets,
     setOffsets,
     addedFiles,
-    setAddedFiles
+    setAddedFiles,
+    domainData,
+    setDomainData,
+    eventsData,
+    setEventsData
   }
 
   return (
