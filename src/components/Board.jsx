@@ -6,12 +6,10 @@ import { calcOffsets } from '../util/functions'
 import Timeline from './Timeline'
 
 export default function Board() {
-    const {scale, lineageData, offSets, setOffsets, addedFiles, setAddedFiles} = useAppContext()
+    const {scale, offSets, setOffsets, addedFiles} = useAppContext()
 
     useEffect(() => {
-        //extract the data property of all elements from addedFiles
-        const filteredData = addedFiles.map(file => file.data);
-        setOffsets(calcOffsets(...filteredData)); 
+        setOffsets(calcOffsets(...addedFiles)); 
     }, [addedFiles, scale])
 
     return (

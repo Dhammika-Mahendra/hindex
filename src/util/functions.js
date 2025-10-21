@@ -6,13 +6,12 @@
 export function calcOffsets(...jsonArrays) {
   //min value of 'from' property across all arrays first elements
   const output={start:'',end:'',offset:[]}
-  const fromValues = jsonArrays.map(arr => (Array.isArray(arr) && arr.length > 0 ? arr[0].from : undefined));
+  const fromValues = jsonArrays.map(arr => arr.from);
   const validFroms = fromValues.filter(v => typeof v === 'number');
   const minFrom = validFroms.length > 0 ? Math.min(...validFroms) : 0;
   output.start = minFrom;
   //max value of 'to' property across all arrays last elements
-  const toValues = jsonArrays.map(arr => (Array.isArray(arr) && arr.length
-  > 0 ? arr[arr.length - 1].to : undefined));
+  const toValues = jsonArrays.map(arr => arr.to);
   const validTos = toValues.filter(v => typeof v === 'number');
   const maxTo = validTos.length > 0 ? Math.max(...validTos) : 0;
   output.end = maxTo;
