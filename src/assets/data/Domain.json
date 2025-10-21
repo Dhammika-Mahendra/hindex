@@ -1,0 +1,246 @@
+[
+    {
+        "id": "101",
+        "name": "Acheamenid Empire",
+        "description": "",
+        "type": "domain",
+        "from": -550,
+        "to": -330,
+        "ch": ""
+    },
+    {
+        "id": "102",
+        "name": "Roman Empire",
+        "description": "Unified Roman Empire",
+        "type": "domain",
+        "from": -27,
+        "to": 476,
+        "ch": ""
+    },
+    {
+        "id": "103",
+        "name": "Byzantine Empire",
+        "description": "Eastern Roman Empire",
+        "type": "domain",
+        "from": 330,
+        "to": 1453,
+        "ch": ""
+    },
+    {
+        "id": "104",
+        "name": "Western Roman Empire",
+        "description": "",
+        "type": "domain",
+        "from": 364,
+        "to": 476,
+        "ch": ""
+    },
+    {
+        "id": "105",
+        "name": "Roman Republic",
+        "description": "",
+        "type": "domain",
+        "from": -509,
+        "to": -27,
+        "ch": ""
+    },
+    {
+        "id": "106",
+        "name": "Mongol Empire",
+        "description": "",
+        "type": "domain",
+        "from": 1206,
+        "to": 1368,
+        "ch": ""
+    },
+    {
+        "id": "107",
+        "name": "Seleucid Empire",
+        "description": "",
+        "type": "domain",
+        "from": -312,
+        "to": 63,
+        "ch": ""
+    },
+    {
+        "id": "108",
+        "name": "Parthian Empire",
+        "description": "",
+        "type": "domain",
+        "from": -247,
+        "to": 224,
+        "ch": ""
+    },
+    {
+        "id": "109",
+        "name": "Sassanian Empire",
+        "description": "",
+        "type": "domain",
+        "from": 224,
+        "to": 651,
+        "ch": ""
+    },
+    {
+        "id": "110",
+        "name": "Rashidun Caliphate",
+        "description": "",
+        "type": "domain",
+        "from": 632,
+        "to": 661,
+        "ch": ""
+    },
+    {
+        "id": "111",
+        "name": "Umayyad Caliphate",
+        "description": "",
+        "type": "domain",
+        "from": 661,
+        "to": 750,
+        "ch": ""
+    },
+    {
+        "id": "112",
+        "name": "Abbasid Caliphate",
+        "description": "",
+        "type": "domain",
+        "from": 750,
+        "to": 1258,
+        "ch": ""
+    },
+    {
+        "id": "113",
+        "name": "Ottoman Empire",
+        "description": "",
+        "type": "domain",
+        "from": 1299,
+        "to": 1922,
+        "ch": ""
+    },
+    {
+        "id": "114",
+        "name": "Seljuk Empire",
+        "description": "",
+        "type": "domain",
+        "from": 1037,
+        "to": 1194,
+        "ch": ""
+    },
+    {
+        "id": "115",
+        "name": "Han Dynasty",
+        "description": "",
+        "type": "domain",
+        "from": -206,
+        "to": 220,
+        "ch": ""
+    },
+    {
+        "id": "116",
+        "name": "Tang Dynasty",
+        "description": "",
+        "type": "domain",
+        "from": 618,
+        "to": 907,
+        "ch": ""
+    },
+    {
+        "id": "117",
+        "name": "Song Dynasty",
+        "description": "",
+        "type": "domain",
+        "from": 960,
+        "to": 1279,
+        "ch": ""
+    },
+    {
+        "id": "118",
+        "name": "Ming Dynasty",
+        "description": "",
+        "type": "domain",
+        "from": 1368,
+        "to": 1644,
+        "ch": ""
+    },
+    {
+        "id": "119",
+        "name": "Qing Dynasty",
+        "description": "",
+        "type": "domain",
+        "from": 1644,
+        "to": 1912,
+        "ch": ""
+    },
+    {
+        "id": "120",
+        "name": "Yuan Dynasty",
+        "description": "",
+        "type": "domain",
+        "from": 1271,
+        "to": 1368,
+        "ch": ""
+    },
+    {
+        "id": "121",
+        "name": "Maurya Empire",
+        "description": "",
+        "type": "domain",
+        "from": -322,
+        "to": -185,
+        "ch": ""
+    },
+    {
+        "id": "122",
+        "name": "Gupta Empire",
+        "description": "",
+        "type": "domain",
+        "from": 320,
+        "to": 550,
+        "ch": ""
+    },
+    {
+        "id": "123",
+        "name": "Zhou Dynasty",
+        "description": "",
+        "type": "domain",
+        "from": -1046,
+        "to": -256,
+        "ch": ""
+    },
+    {
+        "id": "124",
+        "name": "Qin Dynasty",
+        "description": "",
+        "type": "domain",
+        "from": -221,
+        "to": -206,
+        "ch": ""
+    },
+    {
+        "id": "125",
+        "name": "Shang Dynasty",
+        "description": "",
+        "type": "domain",
+        "from": -1600,
+        "to": -1046,
+        "ch": ""
+    },
+    {
+        "id": "126",
+        "name": "Mughal Empire",
+        "description": "",
+        "type": "domain",
+        "from": 1526,
+        "to": 1857,
+        "ch": ""
+    },
+    {
+        "id": "127",
+        "name": "Delhi Sultanate",
+        "description": "",
+        "type": "domain",
+        "from": 1206,
+        "to": 1526,
+        "ch": ""
+    }   
+
+]

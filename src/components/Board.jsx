@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Lineage from './lineage'
 import { useAppContext } from '../context/AppContext'
 import Nav from './Nav/Nav'
 import { calcOffsets } from '../util/functions'    

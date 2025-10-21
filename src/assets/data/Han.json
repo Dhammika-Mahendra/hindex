@@ -3,7 +3,8 @@
     "name":"Han",
     "description":"",
     "type":"lineage",
-    "active":0,
+    "from":-202,
+    "to":220,
     "data":
     [
     {

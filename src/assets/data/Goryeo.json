@@ -3,7 +3,8 @@
     "name":"Goryeo",
     "description":"",
     "type":"lineage",
-    "active":0,
+    "from":918,
+    "to":1392,
     "data":
     [
     {

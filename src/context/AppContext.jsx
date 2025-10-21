@@ -9,6 +9,7 @@ import ming from '../assets/data/Ming.json'
 import goryeo from '../assets/data/Goryeo.json'
 import yuan from '../assets/data/Yuan.json'
 import han from '../assets/data/Han.json'
+import domain from '../assets/data/Domain.json'
 
 // Create the context
 const AppContext = createContext()
