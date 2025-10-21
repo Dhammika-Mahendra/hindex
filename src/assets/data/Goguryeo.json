@@ -3,7 +3,8 @@
     "name":"Goguryeo",
     "description":"",
     "type":"lineage",
-    "active":0,
+    "from":-37,
+    "to":668,
     "data":
     [
     {
