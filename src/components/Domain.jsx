@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { getRandomColor } from '../util/functions'
+import { useAppContext } from '../context/AppContext'
 
-export default function Domain({data,offset,scale}) {
+export default function Domain({data, offset}) {
 
-    const [height,setHeight]= useState(Math.abs(to-from)*scale)
-    const [color,setColor]= useState(getRandomColor())
-    React.useEffect(() => {
-        setHeight(Math.abs(to-from)*scale)}, 
-    [scale])
+  const { scale } = useAppContext();
+  const [height,setHeight]= useState(Math.abs(data.to-data.from)*scale)
+  const [color,setColor]= useState(getRandomColor())
+  React.useEffect(() => {
+      setHeight(Math.abs(data.to-data.from)*scale)}, 
+  [scale])
 
+  const formatYear = (year) => {
+    if (year < 0) return `${Math.abs(year)} BC`;
+    return `${year} AD`;
+  }
   return (
     <div style={{
         height: `${height}px`,
@@ -19,7 +25,8 @@ export default function Domain({data,offset,scale}) {
         top: offset ? `${offset}px` : '0px',
         backgroundColor: color
         }}>
-            {data.name}
+            <p>{data.name}</p>
+            <p>{formatYear(data.from)} - {formatYear(data.to)}</p>
     </div>
   )
 }

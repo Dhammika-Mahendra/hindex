@@ -4,6 +4,7 @@ import { useAppContext } from '../context/AppContext'
 import Nav from './Nav/Nav'
 import { calcOffsets } from '../util/functions'    
 import Timeline from './Timeline'
+import Domain from './Domain'
 
 export default function Board() {
     const {scale, offSets, setOffsets, addedFiles} = useAppContext()
@@ -38,11 +39,12 @@ export default function Board() {
                     }}>
                     {
                         addedFiles.map((data, index) => (
-                            <Lineage 
+                            data.type === "lineage" ? <Lineage 
                                 key={data.id} 
                                 data={data.data} 
                                 offset={offSets.offset[index]*scale || 0} 
-                            />
+                            /> : 
+                            <Domain key={data.id} data={data} offset={offSets.offset[index]*scale || 0} />
                         ))
                     }
                 </div>

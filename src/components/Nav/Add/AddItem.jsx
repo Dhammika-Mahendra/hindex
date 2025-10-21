@@ -10,9 +10,7 @@ return (
             justifyContent: 'space-between',
             padding: '5px 0',
             borderBottom: '1px solid #eee',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            whiteSpace: 'nowrap',
+            lineHeight: '1.2',
         }}
     >
         <p style={{ fontSize: '12px' }}>{name}</p>

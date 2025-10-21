@@ -11,11 +11,11 @@ export default function Add() {
   );
 
   const addFile = (id) => {
-   //add from lineageData to addedFiles based on id (check if already added)
-    const fileToAdd = lineageData.find(item => item.id === id);
-    if (fileToAdd && !addedFiles.some(file => file.id === id)) {
-      setAddedFiles([...addedFiles, fileToAdd]);
-    }
+   //add from lineageData/domainData/eventData to addedFiles based on id (check if already added)
+   const fileToAdd = (type === "lineage" ? lineageData : type === "domain" ? domainData : eventsData).find(item => item.id === id);
+   if (fileToAdd && !addedFiles.some(file => file.id === id)) {
+     setAddedFiles([...addedFiles, fileToAdd]);
+   }
   }
 
   return (
